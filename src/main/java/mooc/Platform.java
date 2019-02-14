@@ -15,7 +15,7 @@ public class Platform {
 	 */
 	public void addCourse(Course c) {
                 if (c==null){
-                    throw new UnsupportedOperationException("course is null");
+                    throw new NullPointerException("course is null");
                 }
                 else{
                     courses.add(c);
@@ -43,7 +43,7 @@ public class Platform {
 	public void registerStudent(Person s) {
             
                     if(s==null){
-                        throw new UnsupportedOperationException("person is null");
+                        throw new NullPointerException("person is null");
                     }
                     else{
                         students.add(s);
@@ -119,9 +119,7 @@ public class Platform {
                         enr.studentHasMark()==false){
                         return enr.getMark();
                     }
-                    else{
-                            throw new NullPointerException("l'étudiant n'est pas inscrit à l'université");
-                    }
+                    
                 }
             return 0;
         }
@@ -131,15 +129,15 @@ public class Platform {
 	 * @throws PlatformException si le cours n'est pas dispensé par l'université
 	 */
 	public Set<Person> studentsForCourse(Course c) throws PlatformException{
-            Set<Person> studentsc=new HashSet<>();
+            Set<Person> studentsfc=new HashSet<>();
                 if (courses.contains(c)){
                     for (Enrollment enr:enrollement ){
                         if (enr.getCourse()==c){
-                            studentsc.add(enr.getPerson());
+                            studentsfc.add(enr.getPerson());
                         }
                     }
                 }
-                return studentsc;
+                return studentsfc;
         }
     
 	
@@ -149,22 +147,22 @@ public class Platform {
 	 * @throws PlatformException si l'étudiant n'est pas inscrit à l'université, 
 	 */
 	public Set<Course> coursesForStudent(Person s) throws PlatformException {
-		Set<Course> coursest=new HashSet<>();
+		Set<Course> coursesfs=new HashSet<>();
                 if (students.contains(s)){
                     for (Enrollment enr:enrollement ){
                         if (enr.getPerson()==s){
-                            coursest.add(enr.getCourse());
+                            coursesfs.add(enr.getCourse());
                         }
                     }
                 }
-                return coursest;
+                return coursesfs;
 	}
 
 	/**
 	 * @return les cours auxquels aucun étudiant n'est incrit
 	 */
-	public Set<Course> emptyCourses() {
-            throw new UnsupportedOperationException("Not supported yet.");
-	}
-
+        /**public Set<Course> emptyCourses() {
+            
+                   
+        }**/
 }
