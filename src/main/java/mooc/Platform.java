@@ -64,7 +64,7 @@ public class Platform {
                                 enrollement.add(enr);
                         }
                         else{
-                            throw new NullPointerException("person is null");
+                            throw new NullPointerException("l'étudiant n'est pas inscrit à l'université ou si le cours n'est pas dispensé par l'université");
                         }
 	}
 
@@ -157,12 +157,11 @@ public class Platform {
                 }
                 return coursesfs;
 	}
+}
 
 	/**
 	 * @return les cours auxquels aucun étudiant n'est incrit
 	 */
-        /**public Set<Course> emptyCourses() {
-            
-                   
-        }**/
-}
+       /** public Set<Course> emptyCourses() {}
+        
+  }**/
