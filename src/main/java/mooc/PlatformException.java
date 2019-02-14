@@ -16,6 +16,8 @@ public class PlatformException extends Exception
         return myStudent; 
     } 
 
-    public Course getCourse() { return myCourse; } 
+    public Course getCourse() { 
+        return myCourse; 
+    } 
 
 }
