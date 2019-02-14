@@ -157,11 +157,31 @@ public class Platform {
                 }
                 return coursesfs;
 	}
-}
+
 
 	/**
 	 * @return les cours auxquels aucun étudiant n'est incrit
 	 */
-       /** public Set<Course> emptyCourses() {}
+        public Set<Course> emptyCourses() {
+            Set<Course> emcources=new HashSet<>();
+            int nb=0;
+            for(Course course :emcources){
+                nb=0;
+                for (Enrollment enr:enrollement ){
+                    if (course==enr.getCourse()){
+                    nb++;
+                    }
+                }
+                if(nb==0){
+                    emcources.add(course);
+                }
+            }
+             return emcources;
+    }
+} 
         
-  }**/
+
+
+
+        
+  
